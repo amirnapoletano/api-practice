@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Make sure it looks good on mobile too -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Practice – Amir</title>
+
+    <!-- Our styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Our JavaScript (API logic will live here) -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>API Practice</h1>
+        <p class="subtitle">
+          We’ll start simple: call a public API and show the result on the page.
+        </p>
+
+        <!-- This button will later trigger an API call -->
+        <button id="load-data-btn">Load example data</button>
+
+        <!-- We’ll render the result of the API call here -->
+        <div id="result" class="result">
+          <!-- For now this is just a placeholder -->
+          <p class="muted">No data loaded yet.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
