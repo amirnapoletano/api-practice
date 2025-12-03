@@ -33,9 +33,13 @@ body {
   max-width: 480px;
   width: 100%;
   padding: 1.8rem 1.6rem 2rem;
-  background: #ffffff;
+  background:
+    radial-gradient(circle at top left, rgba(129, 140, 248, 0.16), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.12), transparent 55%),
+    #ffffff;
   border-radius: 20px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
 }
 
 .card h1 {
@@ -99,17 +103,6 @@ body {
   accent-color: #6366f1;
 }
 
-/* 24h change colors: green if positive, red if negative */
-.change-positive {
-  color: #16a34a;
-  font-weight: 500;
-}
-
-.change-negative {
-  color: #dc2626;
-  font-weight: 500;
-}
-
 /* Button */
 button {
   border-radius: 999px;
@@ -121,7 +114,9 @@ button {
   background: linear-gradient(135deg, #2563eb, #a855f7);
   color: #ffffff;
   box-shadow: 0 14px 35px rgba(37, 99, 235, 0.35);
-  transition: transform 0.12s ease, box-shadow 0.12s ease,
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
     background-color 0.12s ease;
 }
 
@@ -146,6 +141,53 @@ button:active {
   min-height: 3rem;
 }
 
+/* Chart wrapper under the result */
+.chart-wrapper {
+  margin-top: 1.4rem;
+  padding-top: 0.4rem;
+}
+
+.chart-wrapper canvas {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* Portfolio box */
+.portfolio-box {
+  margin-top: 1.4rem;
+  padding: 1rem 0.9rem;
+  background: #f9fafb;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.portfolio-box h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+}
+
+.portfolio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-field input {
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.portfolio-field input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Muted text */
 .muted {
   margin: 0;
   color: #9ca3af;
@@ -153,13 +195,19 @@ button:active {
 
 /* 24h change colors: green if positive, red if negative */
 .change-positive {
-  color: #16a34a; /* Tailwind-ish green-600 style */
+  color: #16a34a;
   font-weight: 500;
 }
 
 .change-negative {
-  color: #dc2626; /* Tailwind-ish red-600 style */
+  color: #dc2626;
   font-weight: 500;
+}
+
+.chart-wrapper {
+  margin-top: 1.4rem;
+  padding-top: 0.4rem;
+  height: 220px; /* 👈 REQUIRED */
 }
 
 /* -------------------------------------

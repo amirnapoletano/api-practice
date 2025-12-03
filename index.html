@@ -8,41 +8,61 @@
 
     <!-- Our styles -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Chart.js for the mini 24h line chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- Our JavaScript (API logic will live here) -->
     <script src="app.js" defer></script>
   </head>
   <body>
     <main class="page">
       <section class="card">
-  <h1>API Practice</h1>
-  <p class="subtitle">
-    Live crypto prices via CoinGecko – EUR & USD with 24h change.
-  </p>
+        <h1>API Practice</h1>
+        <p class="subtitle">
+          Live crypto prices via CoinGecko – EUR &amp; USD with 24h change.
+        </p>
 
-  <!-- Controls row: asset selector + auto-refresh toggle -->
-  <div class="controls-row">
-    <label class="field">
-      <span class="field-label">Asset</span>
-      <select id="asset-select">
-        <option value="bitcoin">Bitcoin (BTC)</option>
-        <option value="ethereum">Ethereum (ETH)</option>
-      </select>
-    </label>
+        <!-- Controls row: asset selector + auto-refresh toggle -->
+        <div class="controls-row">
+          <label class="field">
+            <span class="field-label">Asset</span>
+            <select id="asset-select">
+              <option value="bitcoin">Bitcoin (BTC)</option>
+              <option value="ethereum">Ethereum (ETH)</option>
+            </select>
+          </label>
 
-    <label class="field field--inline-toggle">
-      <input type="checkbox" id="auto-refresh-toggle" />
-      <span>Auto-refresh every 30s</span>
-    </label>
-  </div>
+          <label class="field field--inline-toggle">
+            <input type="checkbox" id="auto-refresh-toggle" />
+            <span>Auto-refresh every 30s</span>
+          </label>
+        </div>
 
-  <!-- Manual refresh button -->
-  <button id="load-data-btn">Load latest price</button>
+        <!-- Manual refresh button -->
+        <button id="load-data-btn">Load latest price</button>
 
-  <!-- Result output -->
-  <div id="result" class="result">
-    <p class="muted">No data loaded yet.</p>
-  </div>
-</section>
+        <!-- Result output -->
+        <div id="result" class="result">
+          <p class="muted">No data loaded yet.</p>
+        </div>
+
+        <!-- 24h mini-chart -->
+        <div class="chart-wrapper">
+          <canvas id="price-chart" aria-label="24h price chart" role="img"></canvas>
+        </div>
+        <!-- Portfolio calculator -->
+<div class="portfolio-box">
+  <h3>Your Portfolio</h3>
+
+  <label class="portfolio-field">
+    <span>Amount owned:</span>
+    <input type="number" id="portfolio-amount" placeholder="e.g. 0.15" />
+  </label>
+
+  <p id="portfolio-result" class="muted">Enter amount to calculate value.</p>
+</div>
+      </section>
     </main>
   </body>
 </html>
