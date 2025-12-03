@@ -49,6 +49,67 @@ body {
   font-size: 0.96rem;
 }
 
+/* Controls row: dropdown + toggle */
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+/* Label + field wrapper */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.field-label {
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Select styling to match the pill button vibe a bit */
+#asset-select {
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+#asset-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.18);
+}
+
+/* Inline checkbox + label */
+.field--inline-toggle {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Colored checkbox (modern browsers) */
+.field--inline-toggle input[type="checkbox"] {
+  accent-color: #6366f1;
+}
+
+/* 24h change colors: green if positive, red if negative */
+.change-positive {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.change-negative {
+  color: #dc2626;
+  font-weight: 500;
+}
+
 /* Button */
 button {
   border-radius: 999px;
@@ -99,4 +160,48 @@ button:active {
 .change-negative {
   color: #dc2626; /* Tailwind-ish red-600 style */
   font-weight: 500;
+}
+
+/* -------------------------------------
+   Responsive tweaks
+   ------------------------------------- */
+
+/* Small screens (iPhone SE, etc.): stack controls + softer spacing */
+@media (max-width: 420px) {
+  .card {
+    padding: 1.5rem 1.25rem 1.7rem;
+    border-radius: 18px;
+  }
+
+  .card h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Larger screens: give the card more presence (Dribbble style) */
+@media (min-width: 768px) {
+  .card {
+    max-width: 520px;
+    padding: 2.1rem 2rem 2.4rem;
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.14);
+  }
+
+  .card h1 {
+    font-size: 1.8rem;
+  }
 }
